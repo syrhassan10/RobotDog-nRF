@@ -12,24 +12,15 @@
 // You can also visit the nRF DeviceTree extension documentation at https://nrfconnect.github.io/vscode-nrf-connect/devicetree/nrfdevicetree.html
 &i2c0 {
 	
-    servo_motor1: servo_motor1@40{
+    motor_driver1: motor_driver1@40{
         compatible = "i2c-device";
         reg = <0x40>;
         label = "Servo1";
     };
-    servo_motor2: servo_motor2@41{
+    motor_driver2: motor_driver2@41{
         compatible = "i2c-device";
         reg = <0x41>;
         label = "Servo2";
     };
-    servo_motor3: servo_motor3@42{
-        compatible = "i2c-device";
-        reg = <0x42>;
-        label = "Servo3";
-    };
-    servo_motor4: servo_motor4@43{
-        compatible = "i2c-device";
-        reg = <0x43>;
-        label = "Servo4";
-    };
+
 };
