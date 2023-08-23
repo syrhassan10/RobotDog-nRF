@@ -1,7 +1,7 @@
 .. _blink-led-sample:
 .. _pwm-blinky-sample:
 
-PWM Blinky
+RobotDog with PCA9685 16-Channel Servo Driver
 ##########
 
 Overview
