@@ -12,3 +12,9 @@ nRF_I2CDevice::nRF_I2CDevice()
 }
 
 
+int nRF_I2CDevice::write_read_i2c(const void *write_buf, size_t num_write, void *read_buf, size_t num_read)
+{
+    
+    return i2c_write_read_dt(&servo_driver_i2c1, write_buf, num_write,read_buf,num_read);
+
+}
