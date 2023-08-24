@@ -14,7 +14,30 @@ nRF_I2CDevice::nRF_I2CDevice()
 
 int nRF_I2CDevice::write_read_i2c(const void *write_buf, size_t num_write, void *read_buf, size_t num_read)
 {
-    
-    return i2c_write_read_dt(&servo_driver_i2c1, write_buf, num_write,read_buf,num_read);
 
+    int ret = i2c_write_read_dt(&servo_driver_i2c1, write_buf, num_write,read_buf,num_read);
+    if(ret != 0){
+	    printk("Failed to write/read I2C device address %x ", servo_driver_i2c1.addr);
+    }
+    return ret;
+
+}
+
+int nRF_I2CDevice::write_i2c(const uint8_t *buf, uint32_t num_bytes)
+{
+    int ret = i2c_write_dt(&servo_driver_i2c1, buf, num_bytes);
+    if(ret != 0){
+        printk("Failed to write to I2C device address %x", servo_driver_i2c1.addr);
+    }
+    return ret;
+
+}
+
+int nRF_I2CDevice::read_i2c(uint8_t *buf, uint32_t num_bytes)
+{
+    int ret = i2c_read_dt(&servo_driver_i2c1, buf, num_bytes);
+    if(ret != 0){
+        printk("Failed to read from I2C device address %x", servo_driver_i2c1.addr);
+    }
+    return ret;
 }
